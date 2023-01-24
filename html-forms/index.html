@@ -6,29 +6,52 @@
   <body>
     <h1>Coding Form!</h1>
     <form action="index.html">
-      <div>Email</div>
-      <input type="email" name="email" />
+      <div>
+        <label for="email-address">Email</label>
+      </div>
+      <div>
+        <input type="email" name="email" />
+      </div>
 
-      <div>Why is coding cool?</div>
-      <select name="reasons">
-        <option value="select-an-option"> Select an option</option>
-        <option value="because-it's-interesting">Because it's interesting</option>
-        <option value="because-it's-fun">Because it's fun</option>
-        <option value="because-it's powerful">Because it's powerful</option>
-      </select>
-
-      <div>Favorite Language (choose one)</div>
-      <input type="radio" name="language" value="html" />HTML
-      <input type="radio" name="language" value="css" />CSS
-      <input type="radio" name="language" value="javascript" />JavaScript
-
-      <div>Would you like to sign up for more information</div>
-      <input type="checkbox" name="subsrcibe" value="sign-me-up" />Sign me up!
-
-      <div>Comments</div>
-      <textarea name="comments" cols="30" rows="10"></textarea>
+      <div>
+        <label for="why-is-coding-cool">Why is coding cool?</label>
+      </div>
+      <div>
+        <select name="reasons">
+          <option value="select-an-option"> Select an option</option>
+          <option value="because-it's-interesting">Because it's interesting</option>
+          <option value="because-it's-fun">Because it's fun</option>
+          <option value="because-it's powerful">Because it's powerful</option>
+        </select>
+      </div>
       <br>
-      <input type="submit" name="submit" value="Submit" />
+      <div>
+        <label for="languages">Favorite Language (choose one)</label>
+      </div>
+      <br>
+      <div>
+        <input type="radio" name="language" value="html" />HTML
+        <input type="radio" name="language" value="css" />CSS
+        <input type="radio" name="language" value="javascript" />JavaScript
+      </div>
+      <br>
+      <div>
+        <label for="subscribe">Would you like to sign up for more information</label>
+      </div>
+      <br>
+      <div>
+        <input type="checkbox" name="subsrcibe" value="sign-me-up" />Sign me up!
+      </div>
+      <div>
+        <label for="comments">Comments</label>
+      </div>
+      <div>
+        <textarea name="comments" cols="30" rows="10"></textarea>
+      </div>
+
+      <div>
+        <input type="submit" name="submit" value="Submit" />
+      </div>
     </form>
   </body>
 </html>
