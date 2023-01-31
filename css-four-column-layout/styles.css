@@ -1,0 +1,46 @@
+h2 {
+  text-align: center;
+  font-family: Barlow, sans-serif;
+  font-weight: bolder;
+}
+
+p {
+  text-align: center;
+  line-height: 2em;
+  font-family: Barlow, sans-serif;
+}
+
+h3 {
+  text-align: center;
+  line-height: 2em;
+  font-family: Barlow, sans-serif;
+  font-weight: bolder;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+}
+
+.four-column {
+  flex-basis: 25%;
+}
+
+.phone {
+  width: 65%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  display: flex;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
