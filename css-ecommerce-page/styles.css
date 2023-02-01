@@ -1,0 +1,60 @@
+header {
+  text-align: center;
+}
+
+h1,
+h2,
+p,
+span {
+  font-family: "DM Sans", sans-serif;
+}
+
+del {
+  color: #d8d8d8;
+  margin-left: 5px;
+}
+
+.gray {
+  color: #d8d8d8;
+}
+
+.highlight {
+  background-color: #fff2e7;
+}
+
+#product-one {
+  width: 250px;
+}
+
+#product-two {
+  width: 250px;
+  margin-top: 5px;
+}
+
+#product-three {
+  width: 250px;
+  margin-top: 5px;
+}
+
+#product-four {
+  width: 250px;
+  height: 375px;
+}
+
+#product-five {
+  width: 250px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+}
+
+.five-column {
+  flex-basis: 20%;
+  margin-left: 35px;
+}
