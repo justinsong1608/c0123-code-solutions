@@ -37,6 +37,11 @@ body {
   box-shadow: 0 1px 0 1px #bdbdbd;
 }
 
+.darker {
+  background-color: #323232;
+  opacity: 0.3;
+}
+
 .button-pop {
   background-color: #eb5d5d;
   color: white;
