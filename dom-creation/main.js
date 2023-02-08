@@ -87,9 +87,10 @@ function renderPokemon(pokemon) {
   var $newTextP = document.createTextNode(pokemon.description);
   $newP.appendChild($newTextP);
   $newDivThree.appendChild($newP);
-  return $row.appendChild($newDivOne);
+
+  return $newDivOne;
 }
 var $row = document.querySelector('.row');
 for (var i = 0; i < pokedex.length; i++) {
-  renderPokemon(pokedex[i]);
+  $row.appendChild(renderPokemon(pokedex[i]));
 }
