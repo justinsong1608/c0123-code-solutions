@@ -1,0 +1,26 @@
+h1 {
+  display: flex;
+  white-space: break-spaces;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  font-size: 50px;
+}
+
+.bottom-correct {
+  border-bottom: solid black;
+  border-bottom-width: thick;
+}
+
+.bottom-red {
+  border-bottom: solid red;
+  border-bottom-width: thick;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  color: red;
+}
