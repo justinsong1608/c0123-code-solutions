@@ -1,0 +1,30 @@
+img {
+  width: 60%;
+}
+
+.column-full > i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.circle > i {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.column-full {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
