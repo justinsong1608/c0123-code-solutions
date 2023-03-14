@@ -1,1 +1,4 @@
-console.log(process.argv[process.argv.length - 1]);
+console.log(process.argv[2]);
+
+const [, , ...msg] = process.argv;
+console.log(msg.join(' '));
