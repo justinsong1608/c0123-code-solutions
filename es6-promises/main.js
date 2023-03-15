@@ -1,6 +1,8 @@
 import takeAChance from './take-a-chance.js';
 
-takeAChance('Justin')
+const user = takeAChance('Justin');
+
+user
   .then((value) => {
     console.log(value);
   })
