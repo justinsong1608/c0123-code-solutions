@@ -4,8 +4,7 @@ const user = takeAChance('Justin');
 
 user.then((value) => {
   console.log(value);
-});
-
-user.catch((reason) => {
-  console.error(reason.message);
-});
+})
+  .catch((reason) => {
+    console.error(reason.message);
+  });
