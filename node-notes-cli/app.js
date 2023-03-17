@@ -1,9 +1,15 @@
 import * as fs from 'node:fs/promises';
 
+const fileContent = await fs.readFile('data.json', 'utf-8');
+const data = JSON.parse(fileContent);
+
+const fileWrite = async () => {
+  const write = await fs.writeFile('data.json', JSON.stringify(data, null, 2));
+  return write;
+};
+
 async function readNotes() {
   try {
-    const fileContent = await fs.readFile('data.json', 'utf-8');
-    const data = JSON.parse(fileContent);
     for (const key in data.notes) {
       console.log(`${key}: ${data.notes[key]}`);
     }
@@ -16,12 +22,10 @@ async function readNotes() {
 async function createNote() {
   try {
     const newNote = process.argv[3];
-    const fileContent = await fs.readFile('data.json', 'utf8');
-    const data = JSON.parse(fileContent);
     const newNoteId = data.nextId;
     data.notes[newNoteId] = newNote;
     data.nextId++;
-    await fs.writeFile('data.json', JSON.stringify(data, null, 2));
+    await fileWrite();
   } catch (err) {
     console.error(err);
     process.exit(1);
@@ -32,10 +36,8 @@ async function updateNote() {
   try {
     const updateId = process.argv[3];
     const updateNote = process.argv[4];
-    const fileContent = await fs.readFile('data.json', 'utf8');
-    const data = JSON.parse(fileContent);
     data.notes[updateId] = updateNote;
-    await fs.writeFile('data.json', JSON.stringify(data, null, 2));
+    await fileWrite();
   } catch (err) {
     console.error(err);
     process.exit(1);
@@ -45,10 +47,8 @@ async function updateNote() {
 async function deleteNote() {
   try {
     const deleteId = process.argv[3];
-    const fileContent = await fs.readFile('data.json', 'utf8');
-    const data = JSON.parse(fileContent);
     delete data.notes[deleteId];
-    await fs.writeFile('data.json', JSON.stringify(data, null, 2));
+    await fileWrite();
   } catch (err) {
     console.error(err);
     process.exit(1);
