@@ -4,8 +4,7 @@ const fileContent = await fs.readFile('data.json', 'utf-8');
 const data = JSON.parse(fileContent);
 
 const fileWrite = async () => {
-  const write = await fs.writeFile('data.json', JSON.stringify(data, null, 2));
-  return write;
+  await fs.writeFile('data.json', JSON.stringify(data, null, 2));
 };
 
 async function readNotes() {
