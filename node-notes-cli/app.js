@@ -14,61 +14,62 @@ async function readNotes() {
       console.log(`${key}: ${data.notes[key]}`);
     }
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 }
 
-async function createNote() {
+async function createNote(newNote) {
   try {
-    const newNote = process.argv[3];
     const newNoteId = data.nextId;
     data.notes[newNoteId] = newNote;
     data.nextId++;
     await fileWrite();
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 }
 
-async function updateNote() {
+async function updateNote(updateId, updateNote) {
   try {
-    const updateId = process.argv[3];
-    const updateNote = process.argv[4];
     data.notes[updateId] = updateNote;
     await fileWrite();
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 }
 
-async function deleteNote() {
+async function deleteNote(deleteId) {
   try {
-    const deleteId = process.argv[3];
     delete data.notes[deleteId];
     await fileWrite();
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     process.exit(1);
   }
 }
 
 const action = process.argv[2];
-switch (action) {
-  case 'read':
-    readNotes();
-    break;
-  case 'create':
-    createNote();
-    break;
-  case 'update':
-    updateNote();
-    break;
-  case 'delete':
-    deleteNote();
-    break;
-  default:
-    console.error('Command not found!');
+try {
+  switch (action) {
+    case 'read':
+      await readNotes();
+      break;
+    case 'create':
+      await createNote(process.argv[3]);
+      break;
+    case 'update':
+      await updateNote(process.argv[3], process.argv[4]);
+      break;
+    case 'delete':
+      await deleteNote(process.argv[3]);
+      break;
+    default:
+      console.error('Command not found!');
+  }
+} catch (err) {
+  console.error(err.message);
+  process.exit(1);
 }
