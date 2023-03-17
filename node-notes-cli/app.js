@@ -4,10 +4,9 @@ async function readNotes() {
   try {
     const fileContent = await fs.readFile('data.json', 'utf-8');
     const data = JSON.parse(fileContent);
-    const notes = Object.entries(data.notes)
-      .map(([id, note]) => `${id}: ${note}`)
-      .join('\n');
-    console.log(`${notes}`);
+    for (const key in data.notes) {
+      console.log(`${key}: ${data.notes[key]}`);
+    }
   } catch (err) {
     console.error(err);
     process.exit(1);
@@ -71,5 +70,5 @@ switch (action) {
     deleteNote();
     break;
   default:
-    throw console.error('Command not found!');
+    console.error('Command not found!');
 }
