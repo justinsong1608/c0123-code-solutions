@@ -24,14 +24,13 @@ const grades = {
 };
 
 app.get('/api/grades', (req, res) => {
-  const newArr = [];
+  const gradesArr = [];
   for (const key in grades) {
-    newArr.push(grades[key]);
+    gradesArr.push(grades[key]);
   }
-  res.json(newArr);
+  res.json(gradesArr);
 });
 
 app.listen(8080, () => {
-  // eslint-disable-next-line no-console
   console.log('Listening on port 8080!');
 });
