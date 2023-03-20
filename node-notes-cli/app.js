@@ -8,26 +8,16 @@ const fileWrite = async () => {
 };
 
 async function readNotes() {
-  try {
-    for (const key in data.notes) {
-      console.log(`${key}: ${data.notes[key]}`);
-    }
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
+  for (const key in data.notes) {
+    console.log(`${key}: ${data.notes[key]}`);
   }
 }
 
 async function createNote(newNote) {
-  try {
-    const newNoteId = data.nextId;
-    data.notes[newNoteId] = newNote;
-    data.nextId++;
-    await fileWrite();
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
+  const newNoteId = data.nextId;
+  data.notes[newNoteId] = newNote;
+  data.nextId++;
+  await fileWrite();
 }
 
 async function updateNote(updateId, updateNote) {
@@ -66,7 +56,7 @@ try {
       await deleteNote(process.argv[3]);
       break;
     default:
-      console.error('Command not found!');
+      throw new Error(`${action} is not a feature!`);
   }
 } catch (err) {
   console.error(err.message);
