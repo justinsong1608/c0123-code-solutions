@@ -19,7 +19,7 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id', (req, res) => {
   const id = req.params.id;
-  if (id < 0) { // Checks to see if id is a positive integer //
+  if (id < 0 || isNaN(Number(id)) || Number(id) === 0 || (Number(id) % 1) !== 0) { // Checks to see if id is a positive integer //
     res.status(400).send({ error: 'The id MUST be a positive integer!' });
   } else if (!data.notes[id]) { // Checks to see if id exists //
     res.status(404).send({ error: `The id:${id} was NOT found!` });
@@ -32,7 +32,7 @@ app.post('/api/notes', async (req, res) => {
   try {
     if (!req.body.content) {
       res.status(400).send({ error: 'Content is a required field' });
-    } else if (req.body.content) {
+    } else {
       const newNoteId = data.nextId;
       data.notes[newNoteId] = req.body;
       data.notes[newNoteId].id = newNoteId;
@@ -49,7 +49,7 @@ app.post('/api/notes', async (req, res) => {
 app.delete('/api/notes/:id', async (req, res) => {
   try {
     const deleteId = req.params.id;
-    if (deleteId < 0) { // Checks to see if id is a positive integer //
+    if (deleteId < 0 || isNaN(Number(deleteId)) || Number(deleteId) === 0 || (Number(deleteId) % 1) !== 0) { // Checks to see if id is a positive integer //
       res.status(400).send({ error: 'The id MUST be a positive integer!' });
     } else if (!data.notes[deleteId]) { // Checks to see if id exists //
       res.status(404).send({ error: `The id:${deleteId} was NOT found!` });
@@ -67,7 +67,7 @@ app.delete('/api/notes/:id', async (req, res) => {
 app.put('/api/notes/:id', async (req, res) => {
   try {
     const updateId = req.params.id;
-    if (updateId < 0) { // Checks to see if id is a positive integer //
+    if (updateId < 0 || isNaN(Number(updateId)) || Number(updateId) === 0 || (Number(updateId) % 1) !== 0) { // Checks to see if id is a positive integer //
       res.status(400).send({ error: 'The id MUST be a positive integer!' });
     } else if (!req.body.content) { // Checks to see if content exists //
       res.status(400).send({ error: 'Content is a required field.' });
