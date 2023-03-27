@@ -2,7 +2,7 @@
 
 // import from a file located at the absolute path `/foo/bar/baz/qux.js`:
 // eslint-disable-next-line import/no-absolute-path
-import f1 from '/foo/bar/baz/qux.js';
+import f1 from '/foo/bar/baz/qux';
 
 // import from a file named `foo.json` located in the current directory:
 import f2 from './foo.json';
