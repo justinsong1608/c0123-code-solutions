@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import './CustomButton.css';
 import CustomButton from './CustomButton';
 
 function App() {
