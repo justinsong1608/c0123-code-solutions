@@ -2,11 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import CustomButton from './CustomButton';
 
-function handleCustomClick(text) {
-  alert(text);
-}
-
 function App() {
+  function handleCustomClick(text) {
+    alert(text);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
