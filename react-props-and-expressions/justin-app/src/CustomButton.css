@@ -1,0 +1,13 @@
+.Red {
+  background-color: red;
+}
+
+.Green {
+  background-color: green;
+}
+
+.Blue {
+  background-color: skyblue;
+  border-radius: 5px;
+  border-color: blue;
+}
