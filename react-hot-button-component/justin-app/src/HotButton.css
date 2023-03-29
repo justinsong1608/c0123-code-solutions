@@ -1,0 +1,34 @@
+.Hot-button-black {
+  background-color: black;
+  color: white;
+}
+
+.Hot-button-dark {
+  background-color: #351c75;
+  color: white;
+}
+
+.Hot-button-purple {
+  background-color: #674ea7;
+  color: white;
+}
+
+.Hot-button-red {
+  background-color: #e06666;
+  color: white;
+}
+
+.Hot-button-orange {
+  background-color: #f6b26b;
+  color: black;
+}
+
+.Hot-button-yellow {
+  background-color: #fffc00;
+  color: black;
+}
+
+.Hot-button-white {
+  background-color: #fff;
+  color: black;
+}
