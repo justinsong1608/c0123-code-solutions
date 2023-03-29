@@ -1,0 +1,40 @@
+.Off {
+  display: flex;
+  align-items: center;
+}
+
+.On {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Oval-off {
+  background-color: #e2e2e2;
+  width: 80px;
+  height: 40px;
+  border-radius: 40px;
+  border-style: solid;
+  border-color: black;
+  position: relative;
+}
+
+.Oval-on {
+  background-color: #6aa84f;
+  width: 80px;
+  height: 40px;
+  border-radius: 40px;
+  border-style: solid;
+  border-color: black;
+  position: relative;
+}
+
+.Circle {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border-style: solid;
+  border-color: black;
+  position: absolute;
+}
