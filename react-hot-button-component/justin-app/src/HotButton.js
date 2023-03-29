@@ -8,7 +8,7 @@ export default function HotButton() {
     setClicked(clicked + 1);
   }
 
-  let color = "";
+  let color;
 
   switch (true) {
     case (clicked >= 3 && clicked < 6): color = "Hot-button-dark"; break;
