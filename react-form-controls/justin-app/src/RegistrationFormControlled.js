@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 export default function RegistrationFormControlled() {
-  const [userName, setUserName] = useState(' ');
-  const [password, setPassword] = useState(' ');
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
