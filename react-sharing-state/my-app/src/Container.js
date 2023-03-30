@@ -34,7 +34,7 @@ export default function Container({ items }) {
  * TODO: Remove the toggle behavior and make the background color a prop, default white.
  * TODO: When clicked, change the current item in the Container.
  */
-function Button({ text, backgroundColor, onShow}) {
+function Button({ text, backgroundColor='white', onShow}) {
   return <button style={{ backgroundColor }} onClick={onShow}>{text}</button>;
 }
 
