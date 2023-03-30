@@ -35,7 +35,7 @@ export default function ValidatedInput() {
       <label style={{display: "block" }}>Password</label>
       <input value={input} onChange={e => setInput(e.target.value)}></input>
       {check}
-      <div style={{color: "red"}}> {text} </div>
+      <p style={{color: "red"}}> {text} </p>
     </form>
   );
 }
