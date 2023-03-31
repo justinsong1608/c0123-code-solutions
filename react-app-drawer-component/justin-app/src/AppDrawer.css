@@ -1,0 +1,49 @@
+h1 {
+  text-align: center;
+  position: fixed;
+  top: 30%;
+  right: 50%;
+  left: 50%;
+}
+
+.App-drawer-hidden {
+  display: none !important;
+}
+
+.App-drawer-menu-closed {
+  font-size: 50px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.App-drawer-button {
+  border: none;
+  background: none;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  cursor: pointer;
+}
+
+.App-drawer-show {
+  padding-left: 20px;
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+.App-drawer {
+  position: fixed;
+  background-color: white;
+  width: 300px;
+  height: 100vh;
+  border-right: solid 5px black;
+  z-index: 2;
+}
+
+.App-drawer-overlay {
+  position: fixed;
+  z-index: 1;
+  opacity: 1;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
