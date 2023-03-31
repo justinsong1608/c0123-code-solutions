@@ -25,10 +25,10 @@ function Panel({content, onShow, activeIndex}) {
   const buttons= [];
   for (let i = 0; i < content.length; i++) {
     buttons.push(
-      <>
+      <div key={i}>
         <Button onShow={() => onShow(i)} title={content[i].title} />
         <Information info={content[i].text} isActive={activeIndex === i} />
-      </>
+      </div>
       );
   }
   return (
