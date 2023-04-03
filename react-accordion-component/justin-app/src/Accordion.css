@@ -1,0 +1,28 @@
+.Accordion-hidden {
+  display: none !important;
+}
+
+.Accordion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Accordion-button {
+  height: 3rem;
+  width: 30rem;
+  border: 2px solid black;
+  margin: 0.1rem;
+  font-size: 2rem;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.Accordion-info {
+  width: 28.95rem;
+  border: 2px solid black;
+  margin: 0.1rem;
+  padding: 0.4rem;
+}
