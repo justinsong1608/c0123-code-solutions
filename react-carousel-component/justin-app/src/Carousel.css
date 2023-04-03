@@ -1,0 +1,17 @@
+img {
+  width: 20rem;
+}
+
+.Carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Carousel-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 6rem;
+  height: 5rem;
+}
