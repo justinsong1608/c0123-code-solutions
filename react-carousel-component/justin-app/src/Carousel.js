@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { RxDotFilled, RxDot } from 'react-icons/rx';
 import './Carousel.css';
@@ -6,16 +6,19 @@ import './Carousel.css';
 export default function Carousel({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const handleClickNext = useCallback(() => setCurrentIndex((currentIndex + 1) % items.length), [currentIndex, items]);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % items.length);
+      // setCurrentIndex((currentIndex + 1) % items.length);
+      handleClickNext();
     }, 3000);
     return () => clearInterval(intervalId);
-  }, [currentIndex, items.length]);
+  }, [handleClickNext]);
 
-  function handleClickNext() {
-    setCurrentIndex((currentIndex + 1) % items.length);
-  }
+  // function handleClickNext() {
+  //   setCurrentIndex((currentIndex + 1) % items.length);
+  // }
 
   function handleClickPre() {
     setCurrentIndex(((currentIndex - 1) + items.length) % items.length);
