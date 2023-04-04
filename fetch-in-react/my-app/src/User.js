@@ -23,11 +23,6 @@ export default function User({ userId, onCancel }) {
         setIsLoading(false);
       }
     })();
-    return () => {
-      setIsLoading(true);
-      setUser();
-      setError();
-    }
   }, [userId]);
 
   if (isLoading) {

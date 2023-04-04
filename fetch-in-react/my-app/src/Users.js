@@ -26,11 +26,6 @@ export default function Users() {
         setIsLoading(false);
       }
     })();
-    return () => {
-      setIsLoading(true);
-      setUsers([]);
-      setError();
-    }
   }, []);
 
 
