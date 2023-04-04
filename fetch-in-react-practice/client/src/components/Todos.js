@@ -23,7 +23,7 @@ export default function Todos() {
           const jsonData = await response.json();
           setTodos(jsonData);
         } catch (err) {
-          setError(err.message);
+          setError(err);
         } finally {
           setIsLoading(false);
         }
@@ -50,7 +50,7 @@ export default function Todos() {
       const jsonData = await response.json();
       setTodos(todos.concat(jsonData));
     } catch (err) {
-      setError(err.message);
+      setError(err);
     } finally {
       setIsLoading(false);
     }
@@ -74,7 +74,7 @@ export default function Todos() {
     try{
       let targetIndex;
       for (let i = 0; i < todos.length; i++) {
-        if (todos[i].todoId === todoId) {
+        if (todos[i].todoId === todoId) { //suggestion: try todos.find //
           targetIndex = i;
         }
       }
@@ -92,7 +92,7 @@ export default function Todos() {
       const updateData = todos.map(todo => todo.todoId === todoId ? jsonData : todo);
       setTodos(updateData);
     } catch (err) {
-      setError(err.message);
+      setError(err);
     } finally {
       setIsLoading(false);
     }
