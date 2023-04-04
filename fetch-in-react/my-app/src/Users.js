@@ -20,9 +20,11 @@ export default function Users() {
         }
         const jsonData = await response.json();
         setUsers(jsonData);
-        setIsLoading(false);
+        // setIsLoading(false);
       } catch (err) {
         setError(err.message);
+        // setIsLoading(false);
+      } finally { // I added this so that I don't have to setIsLoading in try and catch
         setIsLoading(false);
       }
     })();
