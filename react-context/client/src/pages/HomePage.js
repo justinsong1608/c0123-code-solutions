@@ -8,7 +8,7 @@ import './HomePage.css';
 export default function Home() {
   /* TODO: Grab `user` from `AppContext` */
   const navigate = useNavigate();
-  const user = useContext(AppContext);
+  const { user } = useContext(AppContext);
 
   useEffect(() => {
     if (!user) navigate('/sign-in');
